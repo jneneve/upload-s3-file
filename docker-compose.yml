@@ -1,0 +1,10 @@
+services:
+  localstack:
+    image: localstack/localstack:2.0.1
+    ports:
+      - "4566:4566"
+    env_file:
+      - "./.env"
+    volumes:
+      - "./init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"
+      - "./volume:/var/lib/localstack"

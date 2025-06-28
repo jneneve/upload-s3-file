@@ -7,6 +7,7 @@ from utils.get_timestamp import get_timestamp
 
 logger = logging.getLogger(__name__)
 
+
 def upload_s3_file(file_path: str) -> None:
     logger.info(f"Uploading {file_path}")
     s3_bucket_name = settings.AWS_S3_BUCKET_NAME
@@ -20,6 +21,7 @@ def upload_s3_file(file_path: str) -> None:
             Key=s3_key,
         )
     logger.info(f"Uploaded {file_path}")
+
 
 def build_s3_key(s3_bucket_path: str, file_name: str) -> str:
     return f"{s3_bucket_path}/{get_timestamp()}/{file_name}"

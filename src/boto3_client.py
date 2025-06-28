@@ -2,8 +2,8 @@ import boto3
 
 from settings import settings
 
-class Boto3Client:
 
+class Boto3Client:
     def __init__(self, service: str):
         self._client = boto3.client(
             service,

@@ -1,5 +1,6 @@
 import os
 
+
 class Settings:
     ENV_VARS = (
         "AWS_ENDPOINT_URL",
@@ -15,5 +16,6 @@ class Settings:
         if name in self.ENV_VARS:
             return os.environ.get(name)
         raise AttributeError(f"Environment variable {name} not found")
+
 
 settings = Settings()

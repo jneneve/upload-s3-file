@@ -10,6 +10,7 @@ load_dotenv()
 configure_logging()
 logger = logging.getLogger(__name__)
 
+
 def main():
     logger.info("Starting S3 file upload script")
     if len(sys.argv) < 2:
@@ -18,6 +19,7 @@ def main():
     file_path = sys.argv[1]
     upload_s3_file(file_path)
     logger.info("S3 file upload script completed successfully")
+
 
 if __name__ == "__main__":
     main()

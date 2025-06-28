@@ -2,10 +2,10 @@ import os
 import pytest
 from testcontainers.localstack import LocalStackContainer
 
-localstack = (
-    LocalStackContainer(image="localstack/localstack:2.0.1")
-    .with_services("s3")
+localstack = LocalStackContainer(image="localstack/localstack:2.0.1").with_services(
+    "s3"
 )
+
 
 @pytest.fixture(autouse=True)
 def localstack_container(request):
